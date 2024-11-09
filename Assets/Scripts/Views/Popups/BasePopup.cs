@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class BasePopup : MonoBehaviour
+namespace ShelfDisplay
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// 
+    /// </summary>
+    public abstract class BasePopup : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private TextMeshProUGUI m_Title;
+        [SerializeField] private TextMeshProUGUI m_Description;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void SetupPopup(string title, string description)
+        {
+            m_Title.text = title;
+            m_Description.text = description;
+        }
+
+        public abstract void ShowPopup();
+        public abstract void RemovePopup();
     }
 }
