@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace ShelfDisplay
 {
@@ -8,8 +9,8 @@ namespace ShelfDisplay
     /// </summary>
     public class EditProductViewPopup : BasePopup
     {
-        [SerializeField] private InputField m_NameField;
-        [SerializeField] private InputField m_PriceField;
+        [SerializeField] private TMP_InputField m_NameField;
+        [SerializeField] private TMP_InputField m_PriceField;
         [SerializeField] private Button m_OKButton;
         [SerializeField] private Button m_CancelButton;
         
