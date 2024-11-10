@@ -4,10 +4,11 @@ namespace ShelfDisplay
     /// <summary>
     /// 
     /// </summary>
+    [System.Serializable]
     public class ProductData
     {
-        public string Name;
-        public string Description;
-        public float Price;
+        public string name;
+        public string description;
+        public float price;
     }
 }
