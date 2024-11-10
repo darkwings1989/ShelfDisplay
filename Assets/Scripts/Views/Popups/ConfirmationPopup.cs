@@ -1,4 +1,8 @@
 
+using System;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace ShelfDisplay
 {
     /// <summary>
@@ -6,14 +10,17 @@ namespace ShelfDisplay
     /// </summary>
     public class ConfirmationPopup : BasePopup
     {
-        public override void ShowPopup()
-        {
-            throw new System.NotImplementedException();
-        }
+        [SerializeField] private Button m_OkButton;
 
-        public override void RemovePopup()
+        private void Awake()
         {
-            throw new System.NotImplementedException();
+            if (m_OkButton != null)
+            {
+                m_OkButton.onClick.AddListener(() =>
+                {
+                    RemovePopup();
+                });
+            }
         }
     }
 }

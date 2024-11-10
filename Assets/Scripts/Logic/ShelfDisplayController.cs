@@ -53,18 +53,11 @@ namespace ShelfDisplay
                 {
                     if (index < m_Products.Values.Count)
                     {
-                        m_ProductViews[index].Show(productData, OpenEditProductViewPopup);
+                        m_ProductViews[index].Show(productData, m_EditProductViewPopup);
                         index++;
                     }
                 }
             }
-        }
-
-        private void OpenEditProductViewPopup()
-        {
-            if(m_EditProductViewPopup == null) return;
-            
-            m_EditProductViewPopup.ShowPopup();
         }
 
         private void HideProductViews()

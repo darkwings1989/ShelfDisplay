@@ -8,16 +8,23 @@ namespace ShelfDisplay
     /// </summary>
     public abstract class BasePopup : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI m_Title;
-        [SerializeField] private TextMeshProUGUI m_Description;
+        [SerializeField] protected TextMeshProUGUI m_Title;
+        [SerializeField] protected TextMeshProUGUI m_Description;
 
-        public void SetupPopup(string title, string description)
+        public void SetupPopup(string description, string title = "Message")
         {
             m_Title.text = title;
             m_Description.text = description;
         }
 
-        public abstract void ShowPopup();
-        public abstract void RemovePopup();
+        public virtual void ShowPopup()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public virtual void RemovePopup()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -174,6 +174,7 @@ MonoBehaviour:
   m_ProductName: {fileID: 383649271147068611}
   m_ProductDescription: {fileID: 8646758804726476700}
   m_ProductPrice: {fileID: 5815009062182700895}
+  m_OpenEditorPopupButton: {fileID: 9194635882229197168}
 --- !u!1 &2927634953878985372
 GameObject:
   m_ObjectHideFlags: 0

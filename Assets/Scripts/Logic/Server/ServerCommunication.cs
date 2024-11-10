@@ -58,10 +58,6 @@ namespace ShelfDisplay
                 try
                 {
                     m_Products = JsonUtility.FromJson<ProductsDataStorage>(webRequest.downloadHandler.text);
-                    foreach (var product in m_Products.products)
-                    {
-                        Debug.Log("# " + product.name);
-                    }
                     return m_Products;
                 }
                 catch (Exception exp)
