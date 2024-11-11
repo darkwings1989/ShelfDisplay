@@ -5,9 +5,11 @@ A. Instructions for running the project:
    1. Use this link to the demo that I created to run the project:
       https://darkwings1989-github-io-shelf-dispaly-demo.vercel.app/
    2. Make a build by yourself from Unity.
-      * Open your project in Unity.
+      * Open this project in Unity.
       * Go to File > Build Settings.
       * Select WebGL as the target platform and click Switch Platform.
+      * Before making the build, go to PlayerSettings (you can access it from the build settings window) in it choose "Settings for WebGL"
+      * in the "Publishing Settings" choose in the "Competition Format" field one of those two formats: Gzip or Brotli; "Maximum Memory Size" to 512mb (for this project it is enough);  "Initial Memory Size" can be between 64 and 256 (for this project I chose 256.
       * Click Build and choose a folder for the WebGL build output (e.g., Build or WebGLBuild).
       * Unity will generate an HTML file, a Build folder with .js/.wasm files, and a TemplateData folder.
 
