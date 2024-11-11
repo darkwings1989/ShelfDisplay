@@ -1051,9 +1051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19936ed52cac40e418a33ffea607fad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Products:
-    products: []
-  isProductsDataReady: 0
 --- !u!4 &1404932072
 Transform:
   m_ObjectHideFlags: 0
