@@ -18,3 +18,9 @@ B. Overview of my code structure and design decisions:
    For the client, I chose to use the MVC pattern.
    I'm using one controller that acts as a mediator between the client's view and the data that comes from the server. This way, the model (the data), controller, and view are separated and easy to maintain and expand when needed.
    I designed the code so that it will be easy to modify and add new logic to the App.
+
+C. Decisions:
+   * I did a static 3D shelf because I know that at the same time, the shelf will have a max of 3 products.
+   * The edit of the product name and the price are not very user-friendly on mobile but with consideration of the time I had for the assignment, I decided to focus on a clean code and good design.
+   * I created a placeholder for a product 3d model if in the future there will be a model for every product, right now the name and description that I am getting from the server are generic so I decided that it will be a "future" task when
+   * it will be relevant to make this feature.
