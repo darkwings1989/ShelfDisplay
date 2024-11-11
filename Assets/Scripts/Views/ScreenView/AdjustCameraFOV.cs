@@ -82,14 +82,14 @@ namespace ShelfDisplay
                 return;
             }
             
-            // If screen in a portrait mode set fov of 120. 
+            // If screen in a portrait mode set fov of 118. 
             if (aspectRatio < 1f)
             {
                 mainCamera.fieldOfView = 118f;
             }
-            else // if screen in a landscape set fov of 60.
+            else // if screen in a landscape set fov of 45.
             {
-                mainCamera.fieldOfView = 60f;
+                mainCamera.fieldOfView = 45f;
             }
         }
     }
