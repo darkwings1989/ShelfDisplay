@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace ShelfDisplay
 {
     /// <summary>
-    /// This class is resposiable to present the product data as view on the screen.
+    /// This class is responsible to present the product data as view on the screen.
     /// </summary>
     public class ProductView : MonoBehaviour
     {
@@ -15,6 +15,7 @@ namespace ShelfDisplay
         [SerializeField] private TextMeshPro m_ProductPrice;
         [SerializeField] private Button m_OpenEditorPopupButton;
         
+        // A reference to the popup that will allow to make changes to this ProductView data.
         private EditProductViewPopup m_EditProductViewPopup;
         
         /// <summary>
@@ -64,6 +65,11 @@ namespace ShelfDisplay
         }
         
         // Private Methods.
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="onClickAction"></param>
         private void SetEditButtonAction(UnityAction onClickAction)
         {
             if(m_OpenEditorPopupButton == null) return;
@@ -72,13 +78,20 @@ namespace ShelfDisplay
             m_OpenEditorPopupButton.onClick.AddListener(onClickAction);
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
         private void UpdateProductViewWithData(ProductData data)
         {
             m_ProductName.text = data.name;
             m_ProductDescription.text = data.description;
             m_ProductPrice.text = string.Format("{0:N2}", data.price);
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         private void ClearProductViewData()
         {
             m_ProductName.text = "";
