@@ -9,15 +9,15 @@ namespace ShelfDisplay
     /// </summary>
     public class ShelfDisplayController : MonoBehaviour
     {
-        // The ProductViews that will show the product data from the sever.
-        [SerializeField] private List<ProductView> m_ProductViews;
-        // The popup that will allow to make changes to a ProductView data.
-        [SerializeField] private EditProductViewPopup m_EditProductViewPopup;
+        [SerializeField, Tooltip("The ProductViews that will show the product data from the sever.")] 
+        private List<ProductView> m_ProductViews;
+        
+        [SerializeField, Tooltip("The popup that will allow to make changes to a ProductView data.")] 
+        private EditProductViewPopup m_EditProductViewPopup;
         
         // This list is storing locally the last products fetched from the sever.
         private List<ProductData> m_Products = new List<ProductData>();
-
-
+        
         private void Start()
         {
             RefreshProductsAction();
@@ -38,7 +38,14 @@ namespace ShelfDisplay
                 
                 m_Products = new List<ProductData>(productsDataStorage.products);
             }
-                
+
+            if (m_Products == null)
+            {
+                // TODO: In the future I can show this message to the user.
+                Debug.LogError("App failed to get products from the server!");
+                return;
+            }
+            
             // Update Products shelf view with the products data that was fetched from the server.
             UpdateShelfDisplayView();
         }
@@ -52,14 +59,10 @@ namespace ShelfDisplay
         {
             if (m_Products != null && m_ProductViews != null)
             {
-                int index = 0;
-                foreach (ProductData productData in m_Products)
+                for (int i = 0; i < m_Products.Count; i++)
                 {
-                    if (index < m_Products.Count)
-                    {
-                        m_ProductViews[index].Show(productData, m_EditProductViewPopup);
-                        index++;
-                    }
+                    ProductData productData = m_Products[i];
+                    m_ProductViews[i].Show(productData, m_EditProductViewPopup);
                 }
             }
         }

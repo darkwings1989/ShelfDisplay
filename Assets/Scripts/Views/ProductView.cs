@@ -67,7 +67,7 @@ namespace ShelfDisplay
         // Private Methods.
         
         /// <summary>
-        /// 
+        /// Assign an action for the OnClick event for the edit button. 
         /// </summary>
         /// <param name="onClickAction"></param>
         private void SetEditButtonAction(UnityAction onClickAction)
@@ -79,7 +79,7 @@ namespace ShelfDisplay
         }
         
         /// <summary>
-        /// 
+        /// Update the product view with the ProductData data.
         /// </summary>
         /// <param name="data"></param>
         private void UpdateProductViewWithData(ProductData data)
@@ -90,7 +90,7 @@ namespace ShelfDisplay
         }
         
         /// <summary>
-        /// 
+        /// Clear ProductView data.
         /// </summary>
         private void ClearProductViewData()
         {
